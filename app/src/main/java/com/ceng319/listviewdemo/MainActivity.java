@@ -47,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void processDataAdapter() {
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+
+/*
+       TODO 3: Obtain a handle to the object,
+               connect it to a layout manager,
+               and attach an adapter for the data to be displayed.
+*/
+
+
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
@@ -61,21 +69,15 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setAdapter(mAdapter);
+
+
+        // TODO 4: Enabled the Swipe operation.
         enableSwipeToDeleteAndUndo();
-        // TODO 5: set the listView click event. Finished
-      /*  listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("MapleLeaf", Integer.toString(position));
-                // Use intent to pass the activity and position of the click.
-                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
-                intent.putExtra("position", Integer.toString(position));
-                startActivity(intent);
-            }
-        });*/
+
     }
 
     private void enableSwipeToDeleteAndUndo() {
+        // TODO 4.1: onSwipe method is set to delete the item from the list.
         SwipeToDeleteCallback swipeToDeleteCallback = new SwipeToDeleteCallback(this) {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void removeItem(DataItem item , int position) {
+        // TODO 6: Method to delete the item from the list.
         final DataItem item_to_delete = item;
         final int position_to_delete = position;
         mAdapter.removeItem(position);
@@ -107,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void ShowDialogBox(DataItem item, int position){
+        // TODO 5: Show a Dialogbox to confirm
         final DataItem item_to_delete = item;
         final int position_to_delete = position;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -123,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                // Reset the recyclerView
+                // TODO 7: Reset the RecyclerView if dialog box selected "NO"
                 recyclerView.setAdapter(null);
                 recyclerView.setLayoutManager(null);
                 processDataAdapter();
@@ -131,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-
         AlertDialog alert = builder.create();
         alert.show();
     }

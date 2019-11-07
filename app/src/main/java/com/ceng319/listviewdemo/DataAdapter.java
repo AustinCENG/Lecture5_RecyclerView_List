@@ -21,7 +21,7 @@ import java.util.List;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.MyViewHolder> {
     private List<DataItem> dataItemList;
-
+  // TODO: This is a class to Add a list adapter
     public DataAdapter(List<DataItem> dataItemList){
         this.dataItemList = dataItemList;
     }
@@ -145,6 +145,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.MyViewHolder> 
          */
         @Override
         public void onClick(View v) {
+            // TODO: This part is to setup the click event callback method to get to the detaild page.
             // Log.d("MapleLeaf", Integer.toString(position));
             // Use intent to pass the activity and position of the click.
             Intent intent = new Intent(name.getContext().getApplicationContext(), DetailActivity.class);

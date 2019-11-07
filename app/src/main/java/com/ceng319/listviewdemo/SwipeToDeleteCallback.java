@@ -14,7 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
-// TODO : Implement this class as a boilerplate into the code for the itemtouchhelper.
+// TODO 4.2: Implement this class as a boilerplate into the code for the itemtouchhelper.
 abstract public class SwipeToDeleteCallback extends ItemTouchHelper.Callback {
 
     Context mContext;

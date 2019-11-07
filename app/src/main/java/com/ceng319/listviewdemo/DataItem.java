@@ -6,7 +6,7 @@ package com.ceng319.listviewdemo;
 private String itemName;
 private String flagimage;*/
 
-// This is a holder of the data that would be used for your app.
+// TODO 1.1: This is a holder of the data that would be used for your app.
 public class DataItem {
 
     private int itemId;

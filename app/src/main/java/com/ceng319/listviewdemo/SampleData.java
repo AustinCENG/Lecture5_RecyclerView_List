@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SampleData {
-
+    // TODO 8: Create a static list of the data.
     public static List<DataItem> dataItemList;
 
     static {

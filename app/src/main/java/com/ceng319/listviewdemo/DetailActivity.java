@@ -20,6 +20,7 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // TODO: This is an activity to show the detailed page.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -47,7 +48,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private void setDisplayOnLayout() {
         int countryId = findCountryIndex(countryName);
-
+        // TODO: Read the image from the asset directory and display it on the detailed page.
         // Setup the textview.
         mTextView.setText("You clicked: " + SampleData.dataItemList.get(countryId).getItemName());
         // Define an InputStream
